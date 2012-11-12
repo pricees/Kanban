@@ -7,12 +7,12 @@
 
 <p>
   <b>User:</b>
-  <%= @comment.user_id %>
+  <%= @comment.user.try(:name) %>
 </p>
 
 <p>
   <b>Story:</b>
-  <%= @comment.story_id %>
+  <%= @comment.story.try(:name) %>
 </p>
 
 

@@ -17,7 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :story_id %><br />
-    <%= f.number_field :story_id %>
+    <%= f.select :story_id,
+    options_from_collection_for_select(
+    Story.all, "id", "name", @task.story_id),
+    { include_blank: "[pick story]" } %>
+
   </div>
   <div class="actions">
     <%= f.submit %>

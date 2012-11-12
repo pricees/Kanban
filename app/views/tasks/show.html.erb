@@ -7,7 +7,7 @@
 
 <p>
   <b>Story:</b>
-  <%= @task.story_id %>
+  <%= @task.story.try(:name) %>
 </p>
 
 

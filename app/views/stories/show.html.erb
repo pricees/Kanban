@@ -29,6 +29,7 @@
             </p>
           </li>
         <% end %>
+        <li><%= link_to 'New Task', new_task_path(story_id: @story) %></li>
       </ul>
     </div>
   </div>
@@ -57,14 +58,16 @@
 
 <h4>Comments</h4>
 
+<%= link_to 'New Comment', new_comment_path(story_id: @story) %>
 <% @story.comments.each do |comment| %>
-    <%= div_for comment, :class => (comment == @story.comments.last ? 'last' : '') do %>
-      <%= image_tag comment.user.photo, :class => 'photo' %>
-      <div class="inside-comment">
-        <p><strong><%= comment.user.name %></strong> <%= time_ago_in_words(comment.created_at) %> ago</p>
-        <%= comment.body %>
-      </div>      
-    <% end %>
+  <%= div_for comment, :class => (comment == @story.comments.last ? 'last' : '') do %>
+    <%= image_tag comment.user.photo, :class => 'photo' %>
+    <div class="inside-comment">
+      <p><strong><%= comment.user.name %></strong> <%= time_ago_in_words(comment.created_at) %> ago</p>
+      <%= comment.body %>
+    </div>
+  <% end %>
 <% end %>
+<br/>
 
 <%= link_to 'Back', root_path %>

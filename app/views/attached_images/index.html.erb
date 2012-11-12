@@ -12,7 +12,7 @@
 <% @attached_images.each do |attached_image| %>
   <tr>
     <td><%= attached_image.url %></td>
-    <td><%= attached_image.story_id %></td>
+    <td><%= attached_image.story.try(:name) %></td>
     <td><%= link_to 'Show', attached_image %></td>
     <td><%= link_to 'Edit', edit_attached_image_path(attached_image) %></td>
     <td><%= link_to 'Destroy', attached_image, :confirm => 'Are you sure?', :method => :delete %></td>

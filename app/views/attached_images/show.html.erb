@@ -7,7 +7,7 @@
 
 <p>
   <b>Story:</b>
-  <%= @attached_image.story_id %>
+  <%= @attached_image.story.try(:name) %>
 </p>
 
 

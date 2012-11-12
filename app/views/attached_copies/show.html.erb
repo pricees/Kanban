@@ -7,7 +7,7 @@
 
 <p>
   <b>Story:</b>
-  <%= @attached_copy.story_id %>
+  <%= @attached_copy.story.try(:name) %>
 </p>
 
 

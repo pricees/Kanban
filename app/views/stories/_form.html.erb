@@ -21,11 +21,18 @@
   </div>
   <div class="field">
     <%= f.label :project_id %><br />
-    <%= f.number_field :project_id %>
+    <%= f.select :project_id,
+    options_from_collection_for_select(
+    Project.all, "id", "name", @story.project_id),
+    { include_blank: "[pick project]" } %>
   </div>
   <div class="field">
     <%= f.label :state_id %><br />
-    <%= f.number_field :state_id %>
+    <%= f.select :state_id,
+    options_from_collection_for_select(
+    State.all, "id", "name", @story.state_id),
+    { include_blank: "[pick state]" } %>
+
   </div>
   <div class="actions">
     <%= f.submit %>

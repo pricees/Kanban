@@ -12,7 +12,7 @@
 <% @attached_copies.each do |attached_copy| %>
   <tr>
     <td><%= attached_copy.content %></td>
-    <td><%= attached_copy.story_id %></td>
+    <td><%= attached_copy.story.try(:name) %></td>
     <td><%= link_to 'Show', attached_copy %></td>
     <td><%= link_to 'Edit', edit_attached_copy_path(attached_copy) %></td>
     <td><%= link_to 'Destroy', attached_copy, :confirm => 'Are you sure?', :method => :delete %></td>
